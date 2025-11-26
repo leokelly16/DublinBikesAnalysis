@@ -1,0 +1,26 @@
+Research Question:
+
+Availability of bikes near Trinity during term time vs. over the summer or during reading week.
+
+Useful for Trinity students to know when they are unlikely to find a bike.
+
+
+2)
+
+Stations:
+21 (Leinster Street South)
+22 (Townsend Street)
+27 (Molesworth Street)
+32 (Pearse Street)
+98 (Frederick Street South)
+
+Time period:
+
+January 2022 - December 2023
+
+Filters:
+"Term time" =   15 September - 15 December 
+		15 January - 15 April
+
+"Summer time" = 1 May - 31 August
+
