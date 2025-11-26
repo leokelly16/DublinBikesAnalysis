@@ -37,7 +37,7 @@ else:
         df = pd.read_csv(file_path)
 
         # Ensure required column exists
-        if "STATION_ID" not in df.columns:
+        if "STATION ID" not in df.columns:
             print(f"⚠️  Skipping {file_path.name}: missing STATION ID column")
             continue
 
