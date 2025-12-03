@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # --- Bike usage data ---
 bike = pd.read_csv('combined_cleaned.csv')
 
-station_id = 98   # replace with your station ID
+station_id = 32   # replace with your station ID
 year = 2023       # year to analyze
 
 # Filter for the chosen station and year
