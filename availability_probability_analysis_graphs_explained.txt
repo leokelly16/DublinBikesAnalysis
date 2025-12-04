@@ -1,0 +1,5 @@
+Near-full rising at peak: Morning peaks can fill Trinity-adjacent docks because people ride in and park near campus; evening peaks can empty them as riders leave. So “near full” during morning peaks is plausible.
+Weekday vs weekend/holidays: Less commuting on weekends/holidays means fewer bikes arriving to fill stands, so higher near-full probability on holidays fits.
+Near-empty higher off-peak/night: Late evening/overnight riders may take bikes home/outbound and not return them to campus, leaving docks empty until morning replenishment. If data are sparse at night, estimates can be noisy, so check counts.
+Near-empty higher on weekdays: That matches demand during class/work days.
+Sanity check: Print counts (event_count and n) per bar to see if some bars are driven by few samples; adjust thresholds if needed.

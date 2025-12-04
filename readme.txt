@@ -1,5 +1,5 @@
 For Seamus and Leo:
-    - Everytime you open this repository as a VSCode project, run "/.venv/Scripts/activate" in the
+    - Everytime you open this repository as a VSCode project, run ".\/.venv/Scripts/activate" in the
       integrated terminal to activate the virtual environment (venv) for running the scripts
     - If the requirements have changed since last time, or just as good practice, in the venv,
       run "pip install -r requirements.txt"
