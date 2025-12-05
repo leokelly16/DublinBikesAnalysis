@@ -10,11 +10,19 @@
 2) Data Selection:
 	
 	Stations:
+	'Near Trinity'
 		21 (Leinster Street South)
 		22 (Townsend Street)
 		27 (Molesworth Street)
 		32 (Pearse Street)
 		98 (Frederick Street South)
+
+	--
+
+	'Near student accomodation'
+		73 - (Francis Street)
+		72 - (John Street West)
+		7 - (High Street)
 
 	Time Period:
 		January 2023 - December 2023
