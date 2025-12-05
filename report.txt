@@ -17,18 +17,11 @@
 		98 (Frederick Street South)
 
 	Time Period:
-		January 2022 - December 2023
-
-	Filters:
-		'Morning peak' = 7:00 - 10:59
-		'Midday' = 11:00 - 15:59
-		'Evening peak' = 16:00 - 19:59
-		'Night' = 20:00 - 23:59
-		'Overnight' = 00:00 - 6:59
+		January 2023 - December 2023
 
 3) Probability Analysis:
 	Random Variables:
-		Percentage of bikes available 
+		Percentage of bikes available
 
 
 5) Results:
@@ -38,10 +31,20 @@
 	bikes slowly dwindles over the course of the evening, before
 	stabilising after midnight. 
 	This suggests that people commute with bikes from stations elsewhere 
-	and dock them at stations near Trinity, resulting in a
-	steady increase of bikes available over the course of the morning.
-	The availability of bikes is relatively stable 
+	and dock them at stations near Trinity.
+	The availability of bikes is remains high throughout the afternoon,
+	perhaps suggesting a drop in usage during those times.
+	Something interesting shown in the main graph is the very narrow variance
+	around 17:00. We have observed Dublin Bikes vans resupplying stations
+	with bikes throughout the day, so a possible reason for the low variance 
+	during 5pm rush hour is a focused effort by Dublin Bikes to maintain a
+	steady supply of bikes.
+
+
 
 6) Reflect on assumptions:
 
 Dublin Bikes bringing in bikes in trucks etc.
+
+Most of our ideas for research questions centred around 'bike usage', 
+however we soon discovered 
