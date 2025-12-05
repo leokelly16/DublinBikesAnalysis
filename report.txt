@@ -23,6 +23,7 @@
 		73 - (Francis Street)
 		72 - (John Street West)
 		7 - (High Street)
+		45 - (Deverell Place (near Kav))
 
 	Time Period:
 		January 2023 - December 2023

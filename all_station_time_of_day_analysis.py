@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # Load data
 # -----------------------------
-df = pd.read_csv('combined_cleaned.csv')
+df = pd.read_csv('combined_cleaned_near_trinity.csv')
 
 # -----------------------------
 # Select year
@@ -57,14 +57,15 @@ ax.bar(mean_frac.index, mean_frac.values, yerr=variance_frac.values,
 
 ax.set_xlabel("Time of Day (30‑minute intervals)")
 ax.set_ylabel("Mean Fraction of Bikes Docked")
-ax.set_title(f"Mean Fraction of Bikes Docked Across All Stations by Time of Day — {year}\nwith variance between stations")
+ax.set_title(f"Mean Fraction of Bikes Docked Across Stations Near Trinity by Time of Day — {year}\nwith variance between stations")
 
+ax.set_ylim(0, 0.7)
 plt.xticks(rotation=90)
 plt.tight_layout()
 
 # Save graph
 os.makedirs("graphs", exist_ok=True)
-path = f"graphs/all_stations_mean_fraction_docked_{year}_adjusted.png"
+path = f"graphs/all_stations_mean_fraction_docked_near_trinity_{year}_adjusted.png"
 fig.savefig(path)
 plt.close(fig)
 

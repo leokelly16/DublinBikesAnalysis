@@ -137,7 +137,7 @@ def plot_probabilities(df: pd.DataFrame, title: str, ylabel: str, filename: str)
 
 
 def main():
-    df = pd.read_csv("combined_cleaned.csv")
+    df = pd.read_csv("combined_cleaned_near_accommodation.csv")
     df["TIME"] = pd.to_datetime(df["TIME"])
     df["date"] = df["TIME"].dt.date
     df["weekday_num"] = df["TIME"].dt.weekday  # 0=Mon
@@ -151,15 +151,15 @@ def main():
 
     plot_probabilities(
         near_empty_prob,
-        title="P(near-empty) by Academic Period",
+        title="P(near-empty) by Academic Period near Accommodation",
         ylabel=f"P(available bikes <= {NEAR_EMPTY_THRESHOLD})",
-        filename="near_empty_by_academic_period.png",
+        filename="near_empty_by_academic_period_near_accommodation.png",
     )
     plot_probabilities(
         near_full_prob,
-        title="P(near-full) by Academic Period",
+        title="P(near-full) by Academic Period near Accommodation",
         ylabel=f"P(free stands <= {NEAR_FULL_THRESHOLD})",
-        filename="near_full_by_academic_period.png",
+        filename="near_full_by_academic_period_near_accommodation.png",
     )
 
     print("Saved academic-period availability graphs to ./graphs/")

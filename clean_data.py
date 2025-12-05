@@ -12,7 +12,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 combined_df = []
 
 # Station IDs to keep
-KEEP_STATIONS = {21, 22, 27, 32, 98}
+KEEP_STATIONS = {7, 45, 72, 73}
 
 # Regex to detect year and month in filenames (e.g. "dublinbike-historical-data-2022-07.csv")
 YEAR_MONTH_PATTERN = re.compile(r"(\d{4})[-_](\d{2})")
@@ -59,7 +59,7 @@ else:
     # Create and save combined dataset if anything was processed
     if combined_df:
         merged = pd.concat(combined_df, ignore_index=True)
-        merged.to_csv("combined_cleaned.csv", index=False)
+        merged.to_csv("combined_cleaned_near_accommodation.csv", index=False)
         print("📌 Combined dataset saved as 'combined_cleaned.csv'")
     else:
         print("⚠️ No cleaned data to combine.")

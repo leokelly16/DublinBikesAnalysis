@@ -123,7 +123,7 @@ def plot_probability_bar(df: pd.DataFrame, x: str, hue: str, value: str, title: 
 
 
 def main():
-    df = pd.read_csv("combined_cleaned.csv")
+    df = pd.read_csv("combined_cleaned_near_accommodation.csv")
     df = add_time_features(df)
 
     # Probabilities by hour bin and day type
@@ -157,9 +157,9 @@ def main():
         x="hour_bin",
         hue="day_category",
         value="prob",
-        title="Probability of Near-Empty Stations by Time of Day",
+        title="Probability of Near-Empty Stations by Time of Day near Accommodation",
         ylabel="P(available bikes <= 2)",
-        filename="near_empty_by_hour_daytype.png",
+        filename="near_empty_by_hour_daytype_near_accommodation.png",
     )
 
     plot_probability_bar(
@@ -167,20 +167,20 @@ def main():
         x="hour_bin",
         hue="day_category",
         value="prob",
-        title="Probability of Near-Full Stations by Time of Day",
+        title="Probability of Near-Full Stations by Time of Day near Accommodation",
         ylabel="P(free stands <= 2)",
-        filename="near_full_by_hour_daytype.png",
+        filename="near_full_by_hour_daytype_near_accommodation.png",
     )
 
     # Station-level peak vs off-peak bar charts (one for near empty, one for near full)
     for data, event_label, fname in [
-        (near_empty_station_peak, "P(near empty)", "near_empty_peak_vs_off_by_station.png"),
-        (near_full_station_peak, "P(near full)", "near_full_peak_vs_off_by_station.png"),
+        (near_empty_station_peak, "P(near empty)", "near_empty_peak_vs_off_by_station_near_accommodation.png"),
+        (near_full_station_peak, "P(near full)", "near_full_peak_vs_off_by_station_near_accommodation.png"),
     ]:
         pivot = data.pivot(index="STATION ID", columns="peak_status", values="prob").fillna(0)
         pivot = pivot[sorted(pivot.columns)]
         ax = pivot.plot(kind="bar", figsize=(10, 6))
-        ax.set_title(f"{event_label} by Station: Peak vs Off-Peak")
+        ax.set_title(f"{event_label} by Station: Peak vs Off-Peak near Accommodation")
         ax.set_ylabel(event_label)
         ax.set_xlabel("Station ID")
         ax.legend(title="peak_status")
