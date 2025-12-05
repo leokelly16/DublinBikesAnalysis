@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # Load data
 # -----------------------------
-df = pd.read_csv('combined_cleaned_near_trinity.csv')
+df = pd.read_csv("combined_cleaned_near_accommodation.csv")
 
 # -----------------------------
-# Select year
+# Select years (combine 2022 and 2023)
 # -----------------------------
-year = 2023
-df = df[df['YEAR'] == year]
+years = [2022, 2023]
+df = df[df["YEAR"].isin(years)]
 
 # Convert TIME column to datetime
-df['TIME'] = pd.to_datetime(df['TIME'])
+df["TIME"] = pd.to_datetime(df["TIME"])
 
 # -----------------------------
 # Fraction of bikes docked
@@ -22,7 +22,7 @@ df['TIME'] = pd.to_datetime(df['TIME'])
 df["frac_docked"] = df["AVAILABLE_BIKES"] / df["BIKE_STANDS"]
 
 # -----------------------------
-# Extract 30‑minute time-of-day slot
+# Extract 30-minute time-of-day slot
 # -----------------------------
 df["time_of_day"] = df["TIME"].dt.strftime("%H:%M")
 
@@ -36,7 +36,7 @@ station_time = df.groupby(["time_of_day", "STATION ID"])["frac_docked"].mean()
 mean_frac = station_time.groupby("time_of_day").mean().sort_index()
 variance_frac = station_time.groupby("time_of_day").var().sort_index()
 
-# Reorder time-of-day from 05:00 → 04:30 (next day)
+# Reorder time-of-day from 05:00 -> 04:30 (next day)
 times = pd.date_range(
     "2000-01-01 05:00",
     "2000-01-02 04:30",
@@ -52,12 +52,22 @@ variance_frac = variance_frac.reindex(desired_order)
 # -----------------------------
 fig, ax = plt.subplots(figsize=(14, 6))
 
-ax.bar(mean_frac.index, mean_frac.values, yerr=variance_frac.values,
-       capsize=4, width=0.8, color="skyblue", edgecolor="black")
+ax.bar(
+    mean_frac.index,
+    mean_frac.values,
+    yerr=variance_frac.values,
+    capsize=4,
+    width=0.8,
+    color="skyblue",
+    edgecolor="black"
+)
 
-ax.set_xlabel("Time of Day (30‑minute intervals)")
+ax.set_xlabel("Time of Day (30-minute intervals)")
 ax.set_ylabel("Mean Fraction of Bikes Docked")
-ax.set_title(f"Mean Fraction of Bikes Docked Across Stations Near Trinity by Time of Day — {year}\nwith variance between stations")
+ax.set_title(
+    "Mean Fraction of Bikes Docked Across Stations Near Accommodation by Time of Day - 2022/2023 combined\n"
+    "with variance between stations"
+)
 
 ax.set_ylim(0, 0.7)
 plt.xticks(rotation=90)
@@ -65,7 +75,7 @@ plt.tight_layout()
 
 # Save graph
 os.makedirs("graphs", exist_ok=True)
-path = f"graphs/all_stations_mean_fraction_docked_near_trinity_{year}_adjusted.png"
+path = "graphs/all_stations_mean_fraction_docked_near_accommodation_2022_2023_combined_adjusted.png"
 fig.savefig(path)
 plt.close(fig)
 
