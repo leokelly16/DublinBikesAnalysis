@@ -27,10 +27,20 @@
 		'Overnight' = 00:00 - 6:59
 
 3) Probability Analysis:
+	Random Variables:
+		Percentage of bikes available 
 
 
-
-
+5) Results:
+	Our results show that stations near Trinity are relatively empty 
+	during the night, and begin to fill up gradually throughout the
+	morning, peaking at midday. After the midday peak, the number of
+	bikes slowly dwindles over the course of the evening, before
+	stabilising after midnight. 
+	This suggests that people commute with bikes from stations elsewhere 
+	and dock them at stations near Trinity, resulting in a
+	steady increase of bikes available over the course of the morning.
+	The availability of bikes is relatively stable 
 
 6) Reflect on assumptions:
 
